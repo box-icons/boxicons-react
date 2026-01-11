@@ -1,0 +1,15 @@
+# Source files (dist is published)
+src/
+scripts/
+
+# Exclude SVG source folder from npm package
+svg/
+
+# Config files
+tsconfig*.json
+.gitignore
+
+# Development
+node_modules/
+.DS_Store
+*.log

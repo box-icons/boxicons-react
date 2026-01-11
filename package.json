@@ -1,0 +1,58 @@
+{
+  "name": "boxicons-react",
+  "version": "1.0.0",
+  "description": "React components for Boxicons",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    },
+    "./*": {
+      "types": "./dist/types/icons/*.d.ts",
+      "import": "./dist/esm/icons/*.js",
+      "require": "./dist/cjs/icons/*.js",
+      "default": "./dist/cjs/icons/*.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate": "node scripts/generate-icons.js",
+    "build:esm": "tsc --project tsconfig.esm.json",
+    "build:cjs": "tsc --project tsconfig.cjs.json",
+    "build:types": "tsc --project tsconfig.types.json",
+    "build": "npm run generate && npm run build:esm && npm run build:cjs && npm run build:types",
+    "clean": "rm -rf dist src/icons",
+    "prepublishOnly": "npm run clean && npm run build",
+    "publish:package": "npm publish"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "boxicons",
+    "icons",
+    "react",
+    "react-icons",
+    "svg"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
