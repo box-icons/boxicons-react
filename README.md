@@ -1,6 +1,6 @@
 # boxicons-react
 
-A production-ready React icon library built from Boxicons SVG files with full tree-shaking support. Only the icons you import are included in your bundle.
+React icon library built from Boxicons SVG files with full tree-shaking support.
 
 ## Installation
 
@@ -205,46 +205,5 @@ interface BoxIconProps extends SVGProps<SVGSVGElement> {
 }
 ```
 
-## Development
 
-### Building from source
-
-```bash
-# Install dependencies
-npm install
-
-# Generate icon components from SVG files
-npm run generate
-
-# Build the package
-npm run build
-
-# Or do both at once
-npm run build
-```
-
-### Project Structure
-
-```
-boxicons-react/
-├── svg/                    # Source SVG files
-│   ├── basic/             # Outline/regular icons
-│   ├── filled/            # Solid/filled icons
-│   └── brands/            # Brand/logo icons
-├── src/
-│   ├── icons/             # Generated React components
-│   ├── types.ts           # TypeScript types
-│   ├── utils.ts           # Utility functions
-│   └── index.ts           # Main exports
-├── dist/
-│   ├── esm/               # ES Modules build
-│   ├── cjs/               # CommonJS build
-│   └── types/             # TypeScript declarations
-└── scripts/
-    └── generate-icons.js  # Icon generation script
-```
-
-## License
-
-MIT
 # boxicons-react
