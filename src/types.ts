@@ -53,6 +53,13 @@ export interface BoxIconProps extends Omit<SVGProps<SVGSVGElement>, 'ref'> {
   rotate?: number | string;
   
   /**
+   * Remove padding by adjusting the viewBox to "2 2 20 20"
+   * This crops the 2px padding around the icon for a tighter fit
+   * @default false
+   */
+  removePadding?: boolean;
+  
+  /**
    * Additional CSS class name
    */
   className?: string;

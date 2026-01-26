@@ -1,15 +1,15 @@
-# boxicons-react
+# @boxicons/react
 
 React icon library built from Boxicons SVG files with full tree-shaking support.
 
 ## Installation
 
 ```bash
-npm install boxicons-react
+npm install @boxicons/react
 # or
-yarn add boxicons-react
+yarn add @boxicons/react
 # or
-pnpm add boxicons-react
+pnpm add @boxicons/react
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ pnpm add boxicons-react
 ### Basic Usage
 
 ```tsx
-import { Alarm, Twitter, Home } from 'boxicons-react';
+import { Alarm, Twitter, Home } from '@boxicons/react';
 
 function App() {
   return (
@@ -39,7 +39,7 @@ Each icon can have multiple variants. Use the `pack` prop to switch between them
 - **brands** - Brand/logo icons (default for brand icons like Twitter, Facebook, etc.)
 
 ```tsx
-import { Alarm } from 'boxicons-react';
+import { Alarm } from '@boxicons/react';
 
 function App() {
   return (
@@ -56,7 +56,26 @@ function App() {
 
 ### Sizing
 
-Control the size with `width` and `height` props (defaults to 24x24):
+#### Size Presets
+
+Use the `size` prop for convenient preset sizes:
+
+```tsx
+<Alarm size="xs" />   {/* 16px */}
+<Alarm size="sm" />   {/* 20px */}
+<Alarm size="base" /> {/* 24px (default) */}
+<Alarm size="md" />   {/* 36px */}
+<Alarm size="lg" />   {/* 48px */}
+<Alarm size="xl" />   {/* 64px */}
+<Alarm size="2xl" />  {/* 96px */}
+<Alarm size="3xl" />  {/* 128px */}
+<Alarm size="4xl" />  {/* 256px */}
+<Alarm size="5xl" />  {/* 512px */}
+```
+
+#### Custom Sizing
+
+For custom sizes, use `width` and `height` props (overrides `size`):
 
 ```tsx
 <Alarm width={32} height={32} />
@@ -102,6 +121,14 @@ Rotate icons by any degree:
 <Alarm rotate="180deg" />  {/* Also accepts "deg" suffix */}
 ```
 
+### Remove Padding
+
+Remove the default 2px padding around icons for a tighter fit:
+
+```tsx
+<Alarm removePadding />    {/* Crops padding, viewBox becomes "2 2 20 20" */}
+```
+
 ### Combining Props
 
 All props can be combined:
@@ -111,8 +138,7 @@ All props can be combined:
   pack="filled"
   fill="#ffffff"
   opacity={0.8}
-  width={32}
-  height={32}
+  size="lg"
   flip="horizontal"
   rotate={45}
   className="my-icon"
@@ -140,7 +166,7 @@ Refs are forwarded to the SVG element:
 
 ```tsx
 import { useRef } from 'react';
-import { Alarm } from 'boxicons-react';
+import { Alarm } from '@boxicons/react';
 
 function App() {
   const iconRef = useRef<SVGSVGElement>(null);
@@ -155,10 +181,10 @@ This library is fully tree-shakeable. Only the icons you import will be included
 
 ```tsx
 // ✅ Only Alarm is bundled
-import { Alarm } from 'boxicons-react';
+import { Alarm } from '@boxicons/react';
 
 // ✅ Direct import also works
-import { Alarm } from 'boxicons-react/icons/Alarm';
+import { Alarm } from '@boxicons/react/icons/Alarm';
 ```
 
 ## Available Icons
@@ -188,7 +214,7 @@ Icon names are converted from kebab-case SVG filenames to PascalCase:
 Full TypeScript support with exported types:
 
 ```tsx
-import type { BoxIconProps, IconPack, FlipDirection } from 'boxicons-react';
+import type { BoxIconProps, IconPack, IconSize, FlipDirection } from '@boxicons/react';
 ```
 
 ### BoxIconProps
@@ -200,10 +226,12 @@ interface BoxIconProps extends SVGProps<SVGSVGElement> {
   opacity?: number | string;
   width?: number | string;
   height?: number | string;
+  size?: 'xs' | 'sm' | 'base' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
   flip?: 'horizontal' | 'vertical';
   rotate?: number | string;
+  removePadding?: boolean;
 }
 ```
 
 
-# boxicons-react
+# @boxicons/react

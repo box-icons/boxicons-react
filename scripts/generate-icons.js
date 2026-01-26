@@ -164,6 +164,7 @@ const ${componentName} = forwardRef<SVGSVGElement, BoxIconProps>(
       size = 'base',
       flip,
       rotate,
+      removePadding,
       className,
       style,
       ...props
@@ -180,11 +181,14 @@ const ${componentName} = forwardRef<SVGSVGElement, BoxIconProps>(
     const resolvedWidth = width ?? getSizePixels(size);
     const resolvedHeight = height ?? getSizePixels(size);
     
+    // Use cropped viewBox if removePadding is true
+    const resolvedViewBox = removePadding ? '2 2 20 20' : iconData.viewBox;
+    
     return (
       <svg
         ref={ref}
         xmlns="http://www.w3.org/2000/svg"
-        viewBox={iconData.viewBox}
+        viewBox={resolvedViewBox}
         width={resolvedWidth}
         height={resolvedHeight}
         fill={fill}
