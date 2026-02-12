@@ -4,6 +4,9 @@ node_modules/
 # Build output
 dist/
 
+# Source SVG (if present)
+svg/
+
 # Generated source files
 src/icons/
 
