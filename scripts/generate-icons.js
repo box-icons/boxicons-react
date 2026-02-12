@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const SVG_DIR = path.join(__dirname, '..', 'svg');
+const SVG_DIR = path.join(__dirname, '..', '..', 'svg');
 const OUTPUT_DIR = path.join(__dirname, '..', 'src', 'icons');
 
 // Ensure output directory exists

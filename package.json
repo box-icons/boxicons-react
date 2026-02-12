@@ -1,6 +1,6 @@
 {
   "name": "@boxicons/react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React components for Boxicons",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -49,10 +49,11 @@
     "react-icons",
     "svg"
   ],
-  "author": "",
+  "author": "Boxicons",
+  "homepage": "https://boxicons.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "http://github.com/box-icons/boxicons-react"
   }
 }
